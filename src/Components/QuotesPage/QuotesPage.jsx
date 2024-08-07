@@ -3,13 +3,13 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import QuoteCard from '../MiniComponents/QuoteCard';
 import Button from '../MiniComponents/Button';
-import { QuotesContainer, LogoutButton, PaginationButton } from './QuotesPageStyles'; 
+import { QuotesContainer, LogoutButton, PaginationButton, AddQuoteButton } from './QuotesPageStyles'; 
 
 const QuotesPage = ({ token, logout }) => {
   const [quotes, setQuotes] = useState([]);
   const [tags, setTags] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [quotesPerPage] = useState(5);
+  const [quotesPerPage] = useState(6);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -96,22 +96,25 @@ const QuotesPage = ({ token, logout }) => {
   };
 
   return (
+    <div style={{width:"100%",height:"100%",backgroundColor:"#4a5061"}}>
     <QuotesContainer>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
         <LogoutButton onClick={logout}>Logout</LogoutButton>
-        <h2>Quotes</h2>
-        <Button onClick={handleAddQuote} margin="10px">Add a New Quote</Button>
+        <h2 style={{ color: 'white' }}>Quotes</h2>
+        <AddQuoteButton onClick={handleAddQuote}>Add a New Quote</AddQuoteButton>
       </div>
-      {currentQuotes.map((quote) => (
-        <QuoteCard
-          key={quote.id}
-          quote={quote}
-          onUpvote={handleUpvote}
-          onDownvote={handleDownvote}
-          onRemoveUpvote={handleRemoveUpvote}
-          onRemoveDownvote={handleRemoveDownvote}
-        />
-      ))}
+      <div>
+        {currentQuotes.map((quote) => (
+          <QuoteCard
+            key={quote.id}
+            quote={quote}
+            onUpvote={handleUpvote}
+            onDownvote={handleDownvote}
+            onRemoveUpvote={handleRemoveUpvote}
+            onRemoveDownvote={handleRemoveDownvote}
+          />
+        ))}
+      </div>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
         {Array.from({ length: Math.ceil(quotes.length / quotesPerPage) }, (_, index) => (
           <PaginationButton
@@ -124,6 +127,7 @@ const QuotesPage = ({ token, logout }) => {
         ))}
       </div>
     </QuotesContainer>
+    </div>
   );
 };
 

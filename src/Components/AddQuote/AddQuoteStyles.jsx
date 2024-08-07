@@ -6,7 +6,7 @@ export const AddQuoteContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #f0f2f5;
+  background-color: #4a5061;
 `;
 
 export const AddQuoteForm = styled.form`

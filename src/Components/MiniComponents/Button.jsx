@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledButton = styled.button`
   padding: 10px;
-  background-color: ${props => props.primary ? '#007bff' : '#dc3545'};
+  background-color: ${props => props.primary ? '#007bff' : 'green'};
   color: white;
   border: none;
   border-radius: 4px;
@@ -11,7 +11,7 @@ const StyledButton = styled.button`
   margin: ${props => props.margin || '0'};
 
   &:hover {
-    background-color: ${props => props.primary ? '#0056b3' : '#c82333'};
+    background-color: ${props => props.primary ? '#0056b3' : 'darkgreen'};
   }
 `;
 

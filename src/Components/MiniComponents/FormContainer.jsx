@@ -9,6 +9,7 @@ const FormWrapper = styled.div`
   width: 100%;
   max-width: 400px;
   padding: 20px;
+  color: black;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;

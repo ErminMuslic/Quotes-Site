@@ -23,7 +23,7 @@ const LoginPage = ({ setToken }) => {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh',width: '100vw' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh',width: '100vw',backgroundColor: '#4a5061' }}>
     <FormContainer>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>

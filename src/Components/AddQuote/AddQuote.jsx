@@ -25,7 +25,7 @@ const AddQuotePage = ({ token }) => {
 
   return (
     <AddQuoteContainer>
-      <h2>Add a New Quote</h2>
+      <h2 style={{color: 'white'}}>Add a New Quote</h2>
       <AddQuoteForm onSubmit={handleSubmit}>
         <AddQuoteLabel>Content:</AddQuoteLabel>
         <AddQuoteInput type="text" value={content} onChange={(e) => setContent(e.target.value)} />
